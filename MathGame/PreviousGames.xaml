@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGame.PreviousGames"
+             >
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <CollectionView x:Name="gamesList" >
+                <CollectionView.ItemTemplate >
+                    <DataTemplate >
+                        <Grid BackgroundColor="LightGray"  >
+                            
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="70" />
+                                <RowDefinition Height="70" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions   >
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*"  />
+
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Text="date" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Operation" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Score" TextColor="Black" FontAttributes="Bold"  HorizontalOptions="Center"/>
+
+
+                            <Label Grid.Column="0" Text="{Binding DatePlayed}" TextColor="Black" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End"/>
+                            <Label Grid.Column="1" Text="{Binding Type}" TextColor="Black" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End"/>
+                            <Label Grid.Column="2" Text="{Binding Score}" TextColor="Black" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End"/>
+                            <Button Grid.Column="3" Text="Delete" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Teal"
+                                    BindingContext="{Binding Id}"
+                                    Clicked="Button_Clicked"/>
+                           
+
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

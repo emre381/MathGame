@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGame.MainPage"
+             Title="Math Game"
+             NavigationPage.HasNavigationBar="False">
+
+
+
+    <ContentView BackgroundColor="DarkSlateGray">
+        <VerticalStackLayout Spacing="25" Padding="100">
+            <Label Text="This is your math game!" />
+            <Label Text="what would you like a play?" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Addition" Grid.Column="0" BackgroundColor="Teal" Margin="5,0,5,0"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Subtraction" Grid.Column="1" BackgroundColor="Teal" Margin="0,0,5,0"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Multiplication" Grid.Column="2" BackgroundColor="Teal" Margin="0,0,5,0"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Division" Grid.Column="3" BackgroundColor="Teal" Margin="0,0,5,0"
+                        Clicked="Button_Clicked"/>
+                <Button x:Name="Previous"  Grid.Row="1" Grid.ColumnSpan="4" Margin="0,5,0,0"
+                        BackgroundColor="AliceBlue"
+                        Text="View Previous Games" Clicked="Previous_Clicked"/>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ContentView>
+
+</ContentPage>
